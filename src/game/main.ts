@@ -4,6 +4,8 @@ import MainGame from './scenes/Game';
 import MainMenu from './scenes/MainMenu';
 import Preloader from './scenes/Preloader';
 import { AUTO, Game } from 'phaser';
+import MainScene from './scenes/MainScene';
+import SortScene from './scenes/TestDrag';
 
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
@@ -12,9 +14,15 @@ const config: Phaser.Types.Core.GameConfig = {
     width: 1024,
     height: 768,
     parent: 'game-container',
-    backgroundColor: '#028af8',
+    backgroundColor: '#fff',
+    scale:{
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
     scene: [
         Boot,
+        // SortScene,
+        MainScene,
         Preloader,
         MainMenu,
         MainGame,

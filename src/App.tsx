@@ -35,7 +35,7 @@ function App()
         <div id="app">
             <PhaserGame ref={phaserRef} currentActiveScene={currentScene} />
             <div>
-                <div>
+                {/* <div>
                     <input className='outside-in-message' type='text' placeholder='Message' onChange={onMessageChange}/>
                 </div>
 
@@ -43,7 +43,7 @@ function App()
                     <button className="button" onClick={outsideIn}>Outside In</button>
                 </div>
                 <div className="inside-out-message">Inside out: {insideOutMessage}
-                </div>
+                </div> */}
             </div>
         </div>
     )
