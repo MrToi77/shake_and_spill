@@ -61,7 +61,7 @@ export default class DragController {
 
                     const oldIndex = gameObject.getData("index");
                     // Tính index mới dựa vào vị trí x
-                    const localX = gameObject.x - container.x;
+                    const localX = gameObject.x;
                     const rawIdx = localX/gap;
                     const maxIndex = this.declare.total - 1;
                     const newIndex = Phaser.Math.Clamp(Math.round(rawIdx), 0, maxIndex);

@@ -26,7 +26,7 @@ export default class CircleService {
     }
 
     randomQuantity(total: number) {
-        const quantity1 = Math.floor(Math.random() * (total - 1) + 1);
+        const quantity1 = Math.floor(Math.random() * (total));
 
         const quantity2 = total - quantity1;
 

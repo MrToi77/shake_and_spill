@@ -15,7 +15,6 @@ export default class ButtonChoiceService {
     // ... giữ nguyên import và class như cũ ...
 
 private createChoiceButtons() {
-    this.declare.buttonsContainer = this.scene.add.container(512, 350);
 
     const spaceX = 85;
     const n = this.declare.amountOfChoice;
@@ -23,11 +22,13 @@ private createChoiceButtons() {
     // Tính tổng khoảng cách giữa nút trái nhất và phải nhất
     const totalWidth = (n - 1) * spaceX;
     // Offset để căn giữa: bắt đầu vẽ từ bên trái dịch vào nửa tổng
-    const startX = - totalWidth / 2;
+    const startX = (this.scene.scale.width - totalWidth) / 2;
 
-    this.declare.numbers.forEach((num, idx) => {
+    this.declare.buttonsContainer = this.scene.add.container(startX, 350);
+
+    [1,2,3,4,5,6,7,8,9,10].forEach((num, idx) => {
         const value     = num;
-        const positionX = startX + idx * spaceX;
+        const positionX = idx * spaceX;
         const positionY = 0;
 
         // Tạo text + frame
